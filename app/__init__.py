@@ -6,25 +6,9 @@ app = Flask(__name__)
 
 
 
-
-  # Importar el blueprint de rutas principales
-
-def create_app():
-    app = Flask(__name__)
-    
-    # Registrar los Blueprints
-    app.register_blueprint()
-
-    return app
-
-
-
-
-
-
 # importar referenciales
 
-from app.rutas.referenciales.index.index_routes import indmod
+
 from app.rutas.referenciales.ciudad.ciudad_routes import ciumod
 from app.rutas.referenciales.paises.pais_routes import paimod
 from app.rutas.referenciales.nacionalidad.nacionalidad_routes import naciomod  #nacionalidad
@@ -34,7 +18,7 @@ from app.rutas.referenciales.sexo.sexo_routes import sexmod  #sexo
 # registrar referenciales
 modulo0 = '/referenciales'
 
-app.register_blueprint(indmod, url_prefix=f'{modulo0}/index')
+
 
 app.register_blueprint(ciumod, url_prefix=f'{modulo0}/ciudad')
 app.register_blueprint(paimod, url_prefix=f'{modulo0}/paises')
