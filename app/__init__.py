@@ -14,6 +14,7 @@ from app.rutas.referenciales.estado_cita.estado_cita_routes import estacitmod  #
 from app.rutas.referenciales.turno.turno_routes import turmod  #turno
 from app.rutas.referenciales.tratamiento.tratamiento_routes import traumod  #tratamiento
 from app.rutas.referenciales.diagnostico.diagnostico_routes import diagmod  #diagnostico
+from app.rutas.referenciales.sexo.sexo_routes import sexmod  #sexo
 
 # importar gestionar compras
 from app.rutas.gestionar_compras.registrar_pedido_compras.registrar_pedidos_compras_routes  import pdcmod
@@ -31,6 +32,7 @@ app.register_blueprint(estacitmod, url_prefix=f'{modulo0}/estadocita')  #estado 
 app.register_blueprint(turmod, url_prefix=f'{modulo0}/turno') #turno
 app.register_blueprint(traumod, url_prefix=f'{modulo0}/tratamiento') #tratamiento
 app.register_blueprint(diagmod, url_prefix=f'{modulo0}/diagnostico') #diagnostico
+app.register_blueprint(sexmod, url_prefix=f'{modulo0}/sexo')  #sexo
 
 # registro de modulos - gestionar compras
 modulo1 = '/gestionar-compras'
@@ -54,7 +56,8 @@ from app.rutas.referenciales.ocupacion.ocupacion_api import ocupapi
 #estado civil
 from app.rutas.referenciales.estado_civil.estado_civil_api import estacivapi
 
-
+#sexo
+from app.rutas.referenciales.sexo.sexo_api import sexapi
 
 #estado de la cita
 from app.rutas.referenciales.estado_cita.estado_cita_api import estacitapi
@@ -94,7 +97,9 @@ app.register_blueprint(ocupapi, url_prefix=apiversion1)
 apiversion1 = '/api/v1'
 app.register_blueprint(estacivapi, url_prefix=apiversion1)
 
-
+#sexo
+version1 = '/api/v1'
+app.register_blueprint(sexapi, url_prefix=version1)
 
 #Estado de la cita
 apiversion1 = '/api/v1'
